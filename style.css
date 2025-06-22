@@ -1,0 +1,1012 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for dark mode */
+}
+
+/* CSS Variables for Colors (Light Mode by Default) */
+:root {
+  --background-color: #ffffff;
+  --text-color: #333;
+  --header-bg: #ffffff;
+  --nav-link-color: #333;
+  --nav-link-hover-color: #FF865E; /* Bright blue for hover */
+  --hero-h1-color: #333;
+  --hero-span-color: #2b70f0;
+  --hero-p-color: #555;
+  --btn-bg: #2b70f0; /* Default button background (used by generic .btn) */
+  --btn-text-color: #ffffff; /* Default button text color */
+  --section-bg: #f9f9f9;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --footer-bg: #333;
+  --footer-text-color: #f9f9f9;
+  --footer-link-color: #f9f9f9;
+  --footer-link-hover-color: #007bff;
+  --language-selector-bg: #ffffff;
+  --language-selector-border: #ccc;
+  --language-selector-text: #333;
+  --language-selector-arrow-color: #555; /* Color for the custom arrow */
+  --dark-mode-toggle-bg: #f0f0f0;
+  --dark-mode-toggle-color: #333;
+  --framed-content-bg: #e0f2fe; /* Light blue for framed content */
+  --framed-content-text: #333;
+
+  /* --- Hero Section Specific Variables (Light Mode) --- */
+  --hero-bg-gradient-start: #4042E2;
+  --hero-bg-gradient-end: #BDD0FB;
+  --hero-text-content-color: #000; /* Explicitly for hero-text color */
+  --hero-span-highlight-bg: #fff;
+  --hero-span-highlight-color: #4042E2;
+  --hero-btn-primary-bg: #FF865E; /* Specific button color from hero section */
+  --hero-btn-primary-hover-bg: #e65b35; /* Darker shade for hover */
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+  --background-color: #1a1a2e;
+  --text-color: #e0e0e0;
+  --header-bg: #20203a;
+  --nav-link-color: #e0e0e0;
+  --nav-link-hover-color: #FF865E; /* Lighter blue for hover in dark mode */
+  --hero-h1-color: #e0e0e0;
+  --hero-span-color: #88c0d0;
+  --hero-p-color: #b0b0b0;
+  --btn-bg: #88c0d0; /* Dark mode generic button background */
+  --btn-text-color: #1a1a2e;
+  --section-bg: #2c2c44;
+  --card-bg: #3a3a5a;
+  --card-shadow: rgba(0, 0, 0, 0.4);
+  --footer-bg: #1a1a2e;
+  --footer-text-color: #e0e0e0;
+  --footer-link-color: #e0e0e0;
+  --footer-link-hover-color: #88c0d0;
+  --language-selector-bg: #3a3a5a;
+  --language-selector-border: #555;
+  --language-selector-text: #e0e0e0;
+  --language-selector-arrow-color: #b0b0b0; /* Lighter arrow in dark mode */
+  --dark-mode-toggle-bg: #3a3a5a;
+  --dark-mode-toggle-color: #e0e0e0;
+  --framed-content-bg: #3a3a5a; /* Darker blue for framed content in dark mode */
+  --framed-content-text: #e0e0e0;
+
+  /* --- Hero Section Specific Variables (Dark Mode) --- */
+  --hero-bg-gradient-start: #303080; /* Darker blue */
+  --hero-bg-gradient-end: #6a7db0; /* Darker light blue */
+  --hero-text-content-color: #e0e0e0; /* Light text for dark mode hero text */
+  --hero-span-highlight-bg: #3a3a5a; /* Dark background for highlight */
+  --hero-span-highlight-color: #88c0d0; /* Light accent for highlight text */
+  --hero-btn-primary-bg: #FF865E; /* Darker shade of original orange for dark mode */
+  --hero-btn-primary-hover-bg: #FF865E; /* Even darker for hover */
+}
+
+/* Apply variables */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Container for consistent width */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+  background-color: var(--header-bg);
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between; /* Pushes logo left, controls right */
+  align-items: center;
+}
+
+.logo img {
+  height: 150px;
+}
+
+/* Navigation Styles (centered) */
+.main-nav {
+  flex-grow: 1; /* Allows nav to take available space */
+  display: flex;
+  justify-content: center; /* Centers the ul within the nav */
+  align-items: center;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px; /* Space between nav items */
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: var(--nav-link-color);
+  font-weight: 600;
+  padding: 5px 0;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease; /* Added transform for subtle lift */
+}
+
+/* Underline hover effect for nav items */
+.main-nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Adjust distance from text */
+  width: 0;
+  height: 2px;
+  background-color: var(--nav-link-hover-color);
+  transition: width 0.3s ease;
+}
+
+.main-nav ul li a:hover::after {
+  width: 100%;
+}
+
+.main-nav ul li a:hover {
+  color: var(--nav-link-hover-color);
+  transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+
+/* Right-side controls (Language and Dark Mode) */
+.controls-right {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between language selector and dark mode toggle */
+}
+
+.language-selector {
+  position: relative; /* Needed for custom arrow positioning */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.language-selector label {
+  font-size: 1.2em;
+  color: var(--text-color);
+}
+
+.language-selector select {
+  padding: 8px 30px 8px 10px; /* Increased right padding for arrow */
+  border: 1px solid var(--language-selector-border);
+  border-radius: 8px; /* Slightly more rounded */
+  background-color: var(--language-selector-bg);
+  color: var(--language-selector-text);
+  font-size: 0.9em;
+  cursor: pointer;
+  appearance: none; /* Remove default select styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: border-color 0.3s, background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+.language-selector select:hover {
+  border-color: var(--nav-link-hover-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.language-selector select:focus {
+  outline: none;
+  border-color: var(--nav-link-hover-color);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2); /* Focus ring */
+}
+
+/* Custom dropdown arrow for select */
+.language-selector::after {
+  content: '▼'; /* Unicode character for a small down arrow */
+  position: absolute;
+  right: 15px; /* Position next to the select element */
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* Make sure the arrow doesn't block clicks on the select */
+  color: var(--language-selector-arrow-color);
+  font-size: 0.8em;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  background-color: var(--dark-mode-toggle-bg);
+  color: var(--dark-mode-toggle-color);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode-toggle:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+/* --- Hero Section Styles (using new variables) --- */
+.hero {
+  padding: 4rem 0;
+  color: var(--hero-text-content-color); /* Uses variable */
+  min-height: 300px;
+  position: relative;
+  overflow: hidden;
+  padding-top: 1.5rem;
+}
+
+.hero-image-wrapper {
+  background: linear-gradient(135deg, var(--hero-bg-gradient-start), var(--hero-bg-gradient-end)); /* Uses variables */
+  padding: 2rem;
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50% 0% 50% 50% / 40% 0% 50% 60%;
+}
+
+.hero-shape-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-blob-container {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, var(--hero-bg-gradient-start), var(--hero-bg-gradient-end)); /* Uses variables */
+  border-radius: 58% 42% 38% 62% / 46% 54% 46% 54%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px var(--card-shadow); /* Using general card shadow variable */
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+@keyframes blobFloat {
+  0%, 100% {
+    border-radius: 58% 42% 38% 62% / 46% 54% 46% 54%;
+    transform: translateY(0);
+  }
+  50% {
+    border-radius: 50% 50% 60% 40% / 40% 60% 40% 60%;
+    transform: translateY(-20px);
+  }
+}
+
+.hero-blob-container{
+  animation: blobFloat 8s ease-in-out infinite;
+}
+
+.hero-img-inside-blob {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+
+.hero-shape {
+  position: absolute;
+  opacity: 0.2;
+  width: 250px;
+  animation: float 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Hero Content */
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+
+.hero-text {
+  color: var(--hero-text-content-color); /* Uses variable */
+  flex: 1;
+  padding-top: 15rem;
+  transform: translateY(-70px);
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero-text span {
+  background: var(--hero-span-highlight-bg); /* Uses variable */
+  color: var(--hero-span-highlight-color); /* Uses variable */
+  padding: 0.2rem 0.6rem;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.hero-buttons {
+  margin-top: 1.5rem;
+}
+
+.btn {
+  background: var(--hero-btn-primary-bg); /* Uses specific hero button color */
+  color: var(--btn-text-color); /* Reusing general button text color */
+  padding: 0.5rem 1.2rem;
+  border-radius: 30px;
+  margin-left: 1rem;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-icon {
+  width: 24px; /* Reduced size for better fit */
+  height: 24px; /* Reduced size for better fit */
+  margin-left: 10px; /* Add some space between text and icon */
+}
+/* Bounce on hover */
+.btn:hover {
+  background: var(--hero-btn-primary-hover-bg); /* Uses specific hero button hover color */
+  animation: bounce 0.4s ease;
+  cursor: pointer;
+}
+
+/* Keyframes for bounce effect */
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  30%  { transform: translateY(-6px); }
+  50%  { transform: translateY(0); }
+  70%  { transform: translateY(-3px); }
+  100% { transform: translateY(0); }
+}
+
+
+
+/* Hero Image */
+.hero-img img {
+  max-width: 550px;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+  position: relative;
+}
+
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .hero-text {
+    transform: translateY(-20px);
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-img img {
+    max-width: 100%;
+    margin: auto;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
+.logo-img {
+  height: 100%;
+  max-height: 100px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* NOTE: .download-btn should likely be replaced by .btn if it's the same style. */
+/* If it's a unique style, ensure it uses unique variables. */
+/* For now, assuming it reuses .btn styles if not explicitly provided in the original snippet. */
+/* If you want different download button styling in light/dark mode, use separate variables */
+.download-btn {
+  background: var(--hero-btn-primary-bg); /* Use the same variable as .btn for consistency */
+  color: var(--btn-text-color);
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.download-btn:hover {
+  background: var(--hero-btn-primary-hover-bg); /* Use the same hover variable as .btn */
+  transform: translateY(-2px);
+}
+
+
+/* Who We Are Section */
+.who-we-are {
+  background: linear-gradient(to right, #f5f7fa, #ffffff);
+  padding: 100px 30px;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.who-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.who-text {
+  flex: 1;
+  min-width: 320px;
+  padding: 20px;
+}
+
+.who-text h2 {
+  font-size: 2.8em; /* Large, bold title */
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 15px;
+  text-align: center;
+  justify-content: center;
+}
+
+
+.who-text p {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.who-image {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.who-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 24px;
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.08),
+    0 20px 40px rgba(0, 0, 0, 0.06);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.who-image img:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow:
+    0 16px 32px rgba(0, 0, 0, 0.1),
+    0 28px 56px rgba(0, 0, 0, 0.12);
+}
+
+/* Optional background shape */
+.who-we-are::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 400px;
+  height: 400px;
+  background: #BDD0FB;
+  border-radius: 50%;
+  z-index: 0;
+  opacity: 0.1;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .who-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .who-text h2 {
+    font-size: 2.2rem;
+  }
+
+  .who-text p {
+    font-size: 1.05rem;
+  }
+
+  .who-image {
+    margin-top: 30px;
+  }
+}
+
+
+.features-section {
+  padding: 80px 30px;
+  background-color: #f9f9f9;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.framed-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: stretch;
+  padding: 40px 30px;
+  width: 85%;
+  margin: 0 auto;
+  border-radius: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.features-title.inside {
+  text-align: center;
+}
+
+.features-title.inside h2 {
+  font-size: 2.5rem;
+  color: #4042E2;
+  margin-bottom: 15px;
+}
+
+.features-title.inside p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Layout container: cards left, image right */
+.framed-content-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* Cards grid */
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  flex: 1;
+}
+
+/* Feature card */
+.feature-card {
+  background-color: #BDD0FB;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  background-color: #FF865E;
+  color: #fff;
+}
+
+.feature-card:hover h3,
+.feature-card:hover p {
+  color: #fff;
+}
+
+.feature-card:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.feature-card img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.feature-card h3 {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  color: #666;
+  font-size: 0.9em;
+}
+
+/* Image section */
+.frame-image {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-circle {
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: #BDD0FB;
+  position: absolute;
+  z-index: 1;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.circle-image {
+  width: 550px;
+  height: 550px;
+  position: relative;
+  z-index: 2;
+  object-fit: contain;
+  transform: translateY(-20px) translateX(-30px);
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%   { transform: translateY(-20px) translateX(-30px); }
+  50%  { transform: translateY(-30px) translateX(-30px); }
+  100% { transform: translateY(-20px) translateX(-30px); }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .circle-image {
+    width: 400px;
+    height: 400px;
+  }
+
+  .image-circle {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .framed-content-body {
+    flex-direction: column;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .circle-image {
+    width: 320px;
+    height: 320px;
+    transform: translateY(0px) translateX(0px);
+  }
+
+  .image-circle {
+    width: 260px;
+    height: 260px;
+  }
+}
+
+
+
+.insurance-types-section {
+    padding: 80px 0; /* Vertical padding */
+    background-color: #ffffff; /* White background */
+}
+
+.insurance-types-container {
+    max-width: 1200px; /* Max width for content */
+    margin: 0 auto; /* Center content */
+    padding: 0 20px; /* Horizontal padding */
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.8em; /* Large, bold title */
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.section-description {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 60px; /* Space below description */
+    max-width: 800px; /* Limit width of description */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.insurance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid, min 280px wide cards */
+    gap: 30px; /* Space between cards */
+    margin-bottom: 60px; /* Space between grid and button */
+}
+
+.insurance-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px #4042E2; /* Stronger shadow */
+    transition: all 0.3s ease; /* Smooth transition for hover */
+    display: flex; /* Flexbox for content alignment */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.insurance-card:hover {
+    background-color: #ff6600; /* Orange background on hover */
+    color: white; /* White text on hover */
+    transform: translateY(-10px); /* Lift effect */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25); /* More pronounced shadow */
+}
+
+.card-icon {
+    font-size: 4em; /* Large emoji icons */
+    margin-bottom: 20px;
+    line-height: 1; /* Adjust line height for emojis */
+}
+
+.card-title {
+    font-size: 1.8em; /* Card title size */
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333; /* Default color */
+}
+
+.insurance-card:hover .card-title {
+    color: white; /* Title becomes white on hover */
+}
+
+.card-description {
+    font-size: 1em;
+    color: #666; /* Default color */
+}
+
+.insurance-card:hover .card-description {
+    color: #e0e0e0; /* Lighter white for description on hover */
+}
+
+@media (max-width: 1024px) {
+    .features-container {
+        flex-direction: column; /* Stack features and image */
+        padding: 0 40px;
+    }
+
+    .features-cards {
+        margin-right: 0;
+        margin-bottom: 50px; /* Space between cards and image when stacked */
+        max-width: 600px; /* Limit width of stacked cards */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .features-image img {
+        max-width: 80%; /* Smaller image when stacked */
+    }
+
+    .section-title {
+        font-size: 2.2em;
+    }
+
+    .section-description {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 20px;
+    }
+
+    .hero-content-left {
+        margin-right: 0;
+        margin-bottom: 40px;
+        max-width: 100%;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .features-cards {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+
+    .insurance-grid {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+
+    .section-title {
+        font-size: 1.8em;
+    }
+
+    .card-title {
+        font-size: 1.5em;
+    }
+
+    .card-icon {
+        font-size: 3em;
+    }
+}
+
+.process-section {
+  background: linear-gradient(to right, #eef3fd, #f5f9ff);
+  border-radius: 24px;
+  padding: 60px 30px;
+  margin: 60px auto;
+  max-width: 1300px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.process-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.process-title h2 {
+  font-size: 2.5rem;
+  color: #4042E2;
+  margin-bottom: 10px;
+}
+
+.process-title p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+.steps-row {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.step-card {
+  flex: 1;
+  min-width: 250px;
+  background-color: #ffffff;
+  border-radius: 18px;
+  padding: 30px 20px;
+  text-align: left;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-6px);
+}
+
+.step-number {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #4042E2;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.step-card h3 {
+  font-size: 1.4rem;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+.step-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Animation on scroll */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+.footer {
+  background-color: #101522;
+  color: #fff;
+  padding: 60px 20px 30px;
+  font-family: sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+}
+
+.footer-section h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #f0ad4e;
+}
+
+.footer-section p,
+.footer-section a {
+  font-size: 14px;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: #fff;
+}
+
+.footer-logo {
+  height: 100px;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.social-links a {
+  color: #ccc;
+  margin-right: 15px;
+  font-size: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #ffffff;
+}
+
+
+
+.footer-bottom {
+  border-top: 1px solid #2c3e50;
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  font-size: 13px;
+  color: #aaa;
+}

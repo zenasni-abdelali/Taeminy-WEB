@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title data-key="page-title">Taeminy</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-TU5ZbFYr+4QeYbC6n8tPRzP+o/KOz3rAw9m/O1lMN3Vz+7AYsYOKCZ+M4yTJh1b0XfxJpXNsd+HRuy+3FSv23A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo-intro.png" alt="Taeminy Logo" class="logo-img">
+        </a>
+      </div>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#accueil" data-key="nav-home">Accueil</a></li>
+          <li><a href="#a-propos" data-key="nav-about">À Propos</a></li>
+          <li><a href="#pourquoi-choisir" data-key="nav-why-choose">Pourquoi Choisir</a></li>
+          <li><a href="#type" data-key="nav-our-insurances">Nos Assurances</a></li>
+          <li><a href="#process" data-key="nav-how-it-works">Comment ça marche</a></li>
+          <li><a href="#contact" data-key="nav-contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="controls-right">
+        <div class="language-selector">
+          <label for="language-switcher" data-key="language-label">🌐</label>
+          <select id="language-switcher">
+            <option value="fr" selected data-key="lang-french">Français</option>
+            <option value="ar" data-key="lang-arabic">Arabe</option>
+          </select>
+        </div>
+        <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle Dark Mode">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <section id="accueil" class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1><span data-key="hero-title-part1">Nouvelle expérience</span><br> <span data-key="hero-title-part2">d’assurance en Algérie</span></h1>
+        <p data-key="hero-description">
+          Taeminy simplifie vos démarches d’assurance en Algérie. Comparez les offres,
+          choisissez la meilleure couverture, et souscrivez facilement, le tout depuis une seule plateforme.
+        </p>
+        <div class="hero-buttons">
+          <a href="#" class="btn" download data-key="hero-download-app">
+            Télécharger l’app
+            <img src="download.png" alt="Download Icon" class="btn-icon" />
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-blob-container">
+        <img src="4.png" alt="App Screenshot" class="hero-img-inside-blob" />
+      </div>
+
+    </div>
+  </section>
+
+
+  <section id="a-propos" class="who-we-are">
+    <div class="container">
+      <div class="who-content">
+        <div class="who-text">
+          <h2 data-key="about-us-title">Qui sommes-nous ?</h2>
+          <p data-key="about-us-p1">
+            Taeminy est une startup algérienne spécialisée dans les solutions numériques pour le secteur de l’assurance. Nous avons pour objectif de simplifier le processus de souscription à une assurance auto ou voyage, tout en mettant en avant la transparence, la rapidité et la liberté de choix.
+          </p>
+          <p data-key="about-us-p2">
+            Grâce à notre plateforme intuitive, les utilisateurs peuvent comparer instantanément les offres d’assurance de plusieurs compagnies partenaires, sélectionner celle qui leur convient, et souscrire en quelques minutes, sans avoir à se déplacer.
+          </p>
+          <p data-key="about-us-p3">
+            Nous croyons que chaque Algérien mérite un accès simple et rapide à une protection adaptée à ses besoins. Taeminy est bien plus qu’une simple application — c’est une passerelle entre vous et les meilleures compagnies d’assurance du pays.
+          </p>
+        </div>
+        <div class="who-image">
+          <img src="5.png" alt="Notre équipe" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pourquoi-choisir" class="features-section">
+    <div class="framed-content">
+
+      <div class="features-title inside">
+        <h2 data-key="why-choose-title">Pourquoi Choisir Taeminy ?</h2>
+        <p data-key="why-choose-description">Des avantages pensés pour vous simplifier l’assurance automobile et voyage.</p>
+      </div>
+
+      <div class="framed-content-body">
+        <div class="features">
+          <div class="feature-card">
+            <img src="rocket.png" alt="Rapide" />
+            <h3 data-key="feature-fast-title">Rapide</h3>
+            <p data-key="feature-fast-description">Comparez et souscrivez en quelques clics, sans déplacement.</p>
+          </div>
+          <div class="feature-card">
+            <img src="eye.png" alt="Transparent" />
+            <h3 data-key="feature-transparent-title">Transparent</h3>
+            <p data-key="feature-transparent-description">Visualisez clairement les prix et les garanties.</p>
+          </div>
+          <div class="feature-card">
+            <img src="handshake.png" alt="Assureurs de confiance" />
+            <h3 data-key="feature-trusted-insurers-title">Assureurs de confiance</h3>
+            <p data-key="feature-trusted-insurers-description">Comparez des offres provenant de compagnies fiables et agréées.</p>
+          </div>
+          <div class="feature-card">
+            <img src="card.png" alt="Paiement sécurisé" />
+            <h3 data-key="feature-secure-payment-title">Paiement électronique</h3>
+            <p data-key="feature-secure-payment-description">Paiement sécurisé via carte Dahabia pour plus de commodité.</p>
+          </div>
+        </div>
+
+        <div class="frame-image">
+          <div class="image-circle"></div>
+          <img src="7.png" alt="App Preview" class="circle-image" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="type" class="insurance-types-section">
+    <div class="insurance-types-container">
+      <h2 class="section-title" data-key="insurance-types-title">Types d’assurances disponibles</h2>
+      <p class="section-description" data-key="insurance-types-description">Découvrez la gamme complète de nos couvertures pour répondre à tous vos besoins.</p>
+
+      <div class="insurance-grid">
+        <div class="insurance-card">
+          <div class="card-icon">🚗</div>
+          <h3 class="card-title" data-key="insurance-auto-title">Assurance Auto</h3>
+          <p class="card-description" data-key="insurance-auto-description">Assurez votre voiture avec les meilleures offres.</p>
+        </div>
+
+        <div class="insurance-card">
+          <div class="card-icon">✈️</div>
+          <h3 class="card-title" data-key="insurance-travel-title">Assurance Voyage</h3>
+          <p class="card-description" data-key="insurance-travel-description">Voyagez en toute sérénité, partout dans le monde.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="process" class="process-section">
+    <div class="process-title">
+      <h2 data-key="how-it-works-title">Comment ça Marche ?</h2>
+      <p data-key="how-it-works-description">Suivez ces étapes simples pour obtenir votre assurance en quelques minutes.</p>
+    </div>
+    <div class="steps-row">
+      <div class="step-card">
+        <span class="step-number">01.</span>
+        <h3 data-key="step1-title">Remplissez votre Demande</h3>
+        <p data-key="step1-description">Saisissez vos informations personnelles et celles de votre véhicule ou voyage.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">02.</span>
+        <h3 data-key="step2-title">Comparez les Offres</h3>
+        <p data-key="step2-description">Accédez aux offres proposées par nos partenaires et comparez facilement.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">03.</span>
+        <h3 data-key="step3-title">Choisissez l’Offre Idéale</h3>
+        <p data-key="step3-description">Choisissez l’assurance la mieux adaptée à vos besoins et à votre budget.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">04.</span>
+        <h3 data-key="step4-title">Recevez votre Attestation</h3>
+        <p data-key="step4-description">Votre attestation d’assurance est générée et envoyée immédiatement par email.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer id="contact" class="footer">
+    <div class="footer-container">
+
+      <div class="footer-section">
+        <img src="logo-footer.png" alt="Taeminy Logo" class="footer-logo" />
+        <p data-key="footer-about-text">Taeminy vous aide à comparer et souscrire aux meilleures assurances en Algérie, simplement.</p>
+      </div>
+
+      <div class="footer-section">
+        <h3 data-key="footer-our-insurances-title">Nos Assurances</h3>
+        <ul>
+          <li><a href="#" data-key="footer-auto-insurance">Assurance Auto</a></li>
+          <li><a href="#" data-key="footer-travel-insurance">Assurance Voyage</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3 data-key="footer-contact-title">Contact</h3>
+        <p data-key="footer-email">Email : assurance@taeminy.dz</p>
+        <p data-key="footer-phone">Téléphone : +213 123 456 789</p>
+      </div>
+
+      <div class="footer-section">
+        <h3 data-key="footer-social-media-title">Suivez-nous</h3>
+        <div class="social-links">
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+            <img src="facebook.png" alt="Facebook" width="24" />
+          </a>
+          <a href="https://instagram.com" target="_blank" aria-label="instagram">
+            <img src="instagram.png" alt="instagram" width="24" />
+          </a>
+          <a href="https://tiktok.com" target="_blank" aria-label="tiktok">
+            <img src="tiktok.png" alt="tiktok" width="24" />
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p data-key="footer-copyright">© 2025 Taeminy. Tous droits réservés.</p>
+    </div>
+  </footer>
+<script src="script.js"></script>
+
+</body>
+</html>
